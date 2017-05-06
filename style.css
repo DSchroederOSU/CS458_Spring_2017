@@ -1,0 +1,140 @@
+body{
+    width:1060px;
+    margin:50px auto;
+    min-width: 800px;
+}
+
+#header{
+    font-weight: bold;
+    font-size: 3vw;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+#state_container{
+    width: auto;
+    height: auto; 
+    padding: 10px;
+}
+
+#table{
+    width: 100vw;
+    height: 70vh;
+}
+#mapCell{
+    position: absolute;
+    width: 50%;
+    left: 30vw;
+} 
+#graphCell{
+    display: table-cell;
+    width: 50%;
+    position: relative;
+} 
+
+#map_photo{
+    height: 45vh;
+    width: 35vw; 
+}
+
+#nodeCorvallis {
+    width: 2.5vw;
+    height: 2.5vw;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background-color: white; 
+    position: absolute;
+    left: 15%;
+    top: 35%;
+    display: inline;
+ 
+}
+#nodeCorvallis:hover {
+    background-color: #D3D3D3; 
+    cursor: pointer;
+}
+#osulogo {
+    padding: 5px;
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    overflow: hidden;
+    z-index: -1;
+}
+#nodeEugene {
+    width: 2.5vw;
+    height: 2.5vw;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background-color: white; 
+    position: absolute;
+    left: 16%;
+    top: 48%;
+}
+#nodeEugene:hover {
+    background-color: #D3D3D3; 
+    cursor: pointer;
+} 
+#uologo {
+    padding: 5px;
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#nodePortland {
+    width: 2.5vw;
+    height: 2.5vw;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background-color: white; 
+    position: absolute;
+    left: 17%;
+    top: 18%;
+}
+#nodePortland:hover {
+    background-color: #D3D3D3; 
+    cursor: pointer;
+} 
+#psulogo {
+    padding: 5px;
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#chart0{
+    position: absolute; 
+    top: 15vh;
+    left: 100vw;
+}
+#chart1{
+    position: absolute; 
+    display: flex;
+    top: -20vh;
+    left: 0vw;
+}
+#chart2{
+    position: absolute; 
+    display: flex;
+    top: -20vh;
+    left: 50vw;
+}
+#chart3{
+    position: absolute; 
+    display: flex;
+    top: -20vh;
+    left: 50vw;
+}
+
+

@@ -1,0 +1,55 @@
+<html lang="en" data-framework="intercoolerjs">
+<head>
+  <meta charset="utf-8">
+
+  <title>Oregon College Crime Data Visualization</title>
+  <meta name="description" content="CS458 Assignment 1">
+  <meta name="author" content="Daniel Schroeder">
+
+  <link rel="stylesheet" href="style.css">
+    
+</head>
+    
+<body> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="javascript.js"></script>
+    
+    
+    
+    <div id="header">
+      CS 458 Assignment 1 Visualization
+    </div>
+    
+    <table id="table">
+        <tr>
+            <td id="mapCell">
+                <div id="state_container">
+                    <img id="map_photo" SRC="Oregon_Map.png" alt="some text" width=32 height=32/>
+                    
+                    <div id="nodeCorvallis" class="node" onclick="showData('OSU')">
+                        <img id="osulogo" src="osulogo.png" alt="blah" width=auto; height="auto"/>
+                    </div>
+                    <div id="nodeEugene" class="node" onclick="showData('UofO')">
+                        <img id="uologo" src="uologo.jpg" alt="blah" width=auto; height="auto"/>
+                    </div>
+                    <div id="nodePortland" class="node" onclick="showData('PSU')">
+                        <img id="psulogo" src="psu.png" alt="blah" width=auto; height="auto"/>
+                    </div> 
+                </div>  
+                
+            </td>
+            <td id="graphCell">
+                <div id='dashboard' style="position: absolute; left: 1200px; top: 160px;">
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+    <svg id="chart0" width="500" height="500"></svg>
+    
+   <script>
+       
+    </script>
+</body>
+</html>
