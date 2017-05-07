@@ -52,6 +52,8 @@
 \usepackage{cite}                      % needed to automatically sort the references
 \usepackage{tabu}                      % only used for the table example
 \usepackage{booktabs}                  % only used for the table example
+\usepackage[section]{placeins}
+\usepackage{float}
 \usepackage{hyperref}
 \usepackage[hyphenbreaks]{breakurl}
 \hypersetup{
@@ -157,20 +159,19 @@ The website allows the users to compare universities. However, there is no visua
 As the dataset is huge and handling such a vast dataset may result in complications while visualizing, we have decided to first make a prototype with all the universities and colleges in the state of Oregon. The next step is to then include all the universities and colleges in the country. The visualization is a good way to represent this data set as it makes it easier for the intended audience to understand the data better. The following sections show the work flow behind the implementation of this visualization.\\
 
 \section{Literary Research and References} \label{research}
+The data for crimes committed on campuses in the United States has been required by the Clery Act law to be sent to the government each year.  However, this raw data is of little help to future students and parents, because it is presented as long reports of numbers that are hard to gather any information from\cite{lipka-2011}.  A web based visualization will enable future students to easily find the crime data without sorting through dense reports.
 
-The data for crimes committed on campuses in the United States has been required by the Clery Act law to be sent to the government each year.  However, this raw data is of little help to future students and parents as long reports of just numbers are hard to read and hard to find\cite{lipka-2011}.  A web based visualization will enable future students to easily find the crime data without sorting through dense reports.
+A study in 2012 showed that students were afraid of crime maps as it made crimes seem more prevalent than they actually were\cite{fuhrmann-huynh-scholz-2013}. In their visualization they used a bivariate mapping technique to show the actual reported crimes versus the student’s fear of crimes.  For our visualization, we only need the actual data for the crimes so a two color map is not needed.  The same base numbers are used for each University so each of them can be easily compared to one another.  The only downside to this method is that the size of the University is not taken into account which may make smaller Universities disproportionately more safe.
 
-A study in 2012 showed that students were afraid of crime maps as it made crimes seem more prevalent than they actually were\cite{fuhrmann-huynh-scholz-2013}. For our visualization, the same base numbers are used for each University so each University can be easily compared to one another.  The only downside to this method is that the size of the University is not taken into account which may make smaller Universities disproportionately safer.
-
-Another problem with our data is that it includes some crimes committed off-campus. The problem with this is that locations not on campus can contribute to the crime stats without being actually school related.  A report shows the Casinos near campus can cause spikes in certain crimes.  Robberies and vehicle thefts are increased, but burglaries are lower\cite{Thomas:2011:CRIME}.  However, for our needs this does not change the base crime statistics.
-
+The data accessible to us is on-campus only. The problem with this is that locations not on campus can contribute to crime stats without being explicitly school related.  A report shows the Casinos near campus can cause spikes in certain crimes.  Robberies and vehicle thefts near the college campus increased, but burglaries are lower\cite{Thomas:2011:CRIME}.  However, for our project, this does not change the base crime statistics.
 Other problems with our visualization is that it only shows successful crimes that are reported.  Universities have several methods in place to alleviate crime and make their campuses safer\cite{doi:10.1177/0193841X13509815}.  Emergency phones and well lit walkways are just some of the infrastructure in place to counter crime.  In our data, only the resulting crime is reported.
 
+One visualization for crime statistics is shown on funcvis.org\cite{kogan_2013}.  This method was to show a ``bubble plot'' to visualize the crime statistics per population.  We liked the functionality for dynamically changing the visual based on the filters chosen.  This enabled the viewer to focus on what crimes they were most concerned/interested in.  However, a couple of problems were with this approach.  Firstly, it presented information as a proportion of all elements rather than an explicit representation of the data values would show in a bar graph.  Secondly, the ``bubbles'' had to be searched if the viewer wanted to know a specific state.  To solve these problems, we used a geospatial interface based on the university and a bar graph.
 \section{Method and Implementation}
 
-For this visualization, we created a webpage \cite that implements the d3.js v4 package to gather data and present a graphic representation. We had a public dataset \cite with campus crime data from 2013, 2014, and 2015 for colleges all over the united states. From that data, we selected rows pertaining to Oregon colleges (specifically Oregon State University, University of Oregon, and Portland State University) and loaded them as a .csv file into the d3 JavaScript of our webpage. Our visualization creates a dynamic bar chart that changes according to the different filters applied.\\ 
-Our group researched several different visualization techniques in the previous section (\nameref{research}) including pie charts, bubble maps, and heap maps that were used to display data. We analyzed the reasoning behind each technique and began to consider what we really want to convey with our visualization. Some visualizations aimed to display proportionalities between geographical areas or data categories. Some visualizations wanted to show concentrations of data for specific regions with heap maps. In our case, we wanted explicit numbers for specific comparisons.\\
-Our visualization presents college campus crime date as three main comparisons:
+For this visualization, we created a webpage \cite that implements the d3.js v4 package to gather data and present a graphic representation. We had a public dataset \cite with campus crime data from 2013, 2014, and 2015 for colleges all over the united states. From that data, we selected rows pertaining to Oregon colleges (specifically Oregon State University, University of Oregon, and Portland State University) and loaded them as a .csv file into the d3 JavaScript of our webpage. Our visualization creates a dynamic bar chart that changes according to the different filters applied.\\ \\
+\indent Our group researched several different visualization techniques in the previous section (\nameref{research}) including pie charts, bubble maps, and heap maps that were used to display data. We analyzed the reasoning behind each technique and began to consider what we really want to convey with our visualization. Some visualizations aimed to display proportionalities between geographical areas or data categories. Some visualizations wanted to show concentrations of data for specific regions with heap maps. In our case, we wanted explicit numbers for specific comparisons.\\ \\
+\indent Our visualization presents college campus crime data through three main comparisons:
 \begin{enumerate}
 	\item Liquor, weapon, and drug crimes for the years 2013-2015 for a specific school.
 	\item A comparison of each crime type for each year (i.e. weapons crimes of 2013, 2014, and 2015).
@@ -184,14 +185,33 @@ Our visualization presents college campus crime date as three main comparisons:
 \end{figure}
 We use a simple button group that dynamically changes the d3 svg object according to the desired filter. We accomplish this by updating the dataset given to the d3 axes and bar objects each time a new filter event is activated. 
 \subsection{One School, All Data}
-Our visualization begins by selecting a school and displaying crime data for weapon crimes, drug crimes, and liquor crimes by year. By clicking on a school node, the webpage calls a JavaScript function buildChart() and passes in a string parameter for the desired college. This function then parses the .csv file and creates arrays for each crime type and year based on college. We used d3.js functions such as nest() and rollup() to combine all data rows for the same college and add the values for each crime category \cite{d3API}.
-It then creates a dataset by selecting only data from each array pertaining to the college supplied by the function parameter. Using this dataset, the function appends rectangle objects and axes to the svg element in the HTML of the webpage, and populates each obbject with the corresponding values. This creates a bar graph separated by crime type and year for the specified school. Clicking a different college node on the map will remove all previous rectangles and axes, repopulate the dataset with the corresponding college's data, and rebuild the bar graph. 
+Our visualization begins by selecting a school from an image of the state of Oregon and displaying crime data for weapon crimes, drug crimes, and liquor crimes by year. By clicking on a school node, the webpage calls a JavaScript function buildChart() and passes in a string parameter for the desired college. This function then parses the .csv file and creates arrays for each crime type and year based on college. We used d3.js functions such as nest() and rollup() to combine all data rows for the same college and add the values for each crime category \cite{d3API}.
+It then creates a dataset by selecting only data from each array pertaining to the college supplied by the function parameter. Using this dataset, the function appends rectangle objects and axes to the svg element in the HTML of the webpage, and populates each obbject with the corresponding values. This creates a bar graph separated by crime type and year for the specified school. Clicking a different college node on the map image will remove all previous rectangles and axes, repopulate the dataset with the corresponding college's data, and rebuild the bar graph. 
 \begin{figure}[h]
 \label{fig:OneSchoolAllData}
 \centering
-\includegraphics[width=9cm, height=9cm]{OneSchoolAllData}
+\includegraphics[width=8cm, height=7cm]{OneSchoolAllData}
 \caption{A bar graph of all crimes for Oregon State University organized by crime type and year.}
 \end{figure}
+
+\subsection{One School, By Crime Type}
+Our visualization adopts filtering techniques made aware to us by one of our researched sources \cite{ kogan_2013 }, that allows the user to select a specific type of crime and see the number of reports of that crime by year.  This filter enables an explicit representation of crimes over time to depict whether a college campus has grown safer, or more dangerous, across the three years our dataset provided. There are HTML buttons pertaining to each type of crime (weapon, drug, and liquor), and upon clicking a button, one of three JavaScript functions pertaining to a crime type removes all d3 axes and rectangle objects from the current svg and updates the dataset by selecting the .cvs columns that correlate to the specified crime type. The function looks at what college is currently being displayed and builds a new bar chart with the specified crime type values for each year. As shown in \nameref{fig:OneSchoolOneType}, this bar graph shows an increase in drug crimes on Oregon State University's campus from 2013 to 2015 and provides a very clear, distinguishable comparison between each year.
+\begin{figure}[H]
+\label{fig:OneSchoolOneType}
+\centering
+\includegraphics[width=8cm, height=7cm]{OneSchoolOneType}
+\caption{A bar graph of all weapon crimes for all three colleges from 2013 to 2015.}
+\end{figure}
+
+\subsection{All Schools, By Crime Type}
+Our final component in the visualization compares all three colleges based on a given crime type. This filter provides a specific comparison between multiple college campuses rather than comparisons of crime data for one campus over time. We implemented this filter to provide users with the capability of visualizing data for multiple colleges side-by-side and being able to compare their values. This is similar to the idea of the ``bubble map’’ from \href{http://funcvis.org/visuals/crime/#all_states=&crimes=}{Crime Bubble Map} that allows different states to be compared visually by size of bubble, except, as previously stated, we wanted to visualized hard number values to the given representation. For this reason, we made each college its own bar in the graph so that the y-axis can properly represent the number values.
+\begin{figure}[H]
+\label{fig:AllSchoolsOneType}
+\centering
+\includegraphics[width=8cm, height=7cm]{AllSchoolsOneType}
+\caption{A bar graph of all drug crimes for Oregon State University organized year.}
+\end{figure}
+
 \section{Conclusion}
 
 Insert Conclusion.

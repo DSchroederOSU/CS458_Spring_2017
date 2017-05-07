@@ -363,7 +363,7 @@ function weapons(){
     .attr("font-family", "Verdana, Geneva, sans-serif")
     .style("font-size", "16px")
     .style("font-weight", "bold")
-    .text("Number of Crimes");  
+    .text("Number of Crimes");
         
     svg.append("text")
     .attr("x", ((width + margin.left + margin.right) / 2) + 20)             
@@ -867,15 +867,17 @@ function compareAll(){
     .attr("y", -35)
     .attr("text-anchor", "middle")
     .attr("transform", "rotate(-90)")
-    .style("font-size", "20px")
-    .style("font-weight", "bold")
-    .text("Number of Crimes");  
-    svg.append("text")
-    .attr("x", ((width + margin.left + margin.right) / 2) + 20)             
-    .attr("y", 0 + (margin.top/2) + 10)
     .attr("font-family", "Verdana, Geneva, sans-serif")
-    .attr("text-anchor", "middle")  
-    .style("font-size", "20px")
+    .style("font-size", "16px")
+    .style("font-weight", "bold")
+    .text("Number of Crimes");
+    svg.append("text")
+    .attr("x", ((width + margin.left + margin.right) / 2)+20)             
+    .attr("y", 0 + (margin.top/2) + 10)
+    .attr("text-anchor", "middle") 
+    .style("font-size", "14px")
+    .style("font-weight", "bold")
+    .attr("font-family", "Verdana, Geneva, sans-serif")
     .text("" + title + " Crimes By School (2013-2015)");
 
     g.selectAll(".bar")
