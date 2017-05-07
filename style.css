@@ -1,18 +1,71 @@
 body{
-    width:1060px;
-    margin:50px auto;
+    margin: 0px;
+    width:100vw;
     min-width: 800px;
 }
 
-#header{
+#startup{
+     background-color: #41ab5d;
+    color: white;
+    font-family:verdana, sans-serif;
     font-weight: bold;
-    font-size: 3vw;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 40px;
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 18px;
+    -moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+    padding: 10px;
+    position: absolute;
+    left: 21vw;
+    top: 75vh;
+}
+
+.choose{
+    background-color: #41ab5d;
+    color: white;
+    font-family:verdana, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    -moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+    padding: 5px;
+    position: absolute;
+ 
+}
+#choose0{
+    left: 21.5vw;
+    top: 41vh; 
+}
+#choose1{
+    left: 22vw;
+    top: 47vh; 
+}
+#choose2{
+    left: 22.4vw;
+    top: 33vh; 
+}
+
+h2{
+    color: white;
+    margin: 5px;
+    margin-left: 13vw;
+    font-family:verdana, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+.label{
+    float: right;
+    color: white;
+    font-family:verdana, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+#header{
+    color: white;
+    background-color: #41ab5d;
+    margin-bottom: 10vh;
+    width: 100%;
+    padding: 30px;
 }
 #state_container{
     width: auto;
@@ -47,6 +100,7 @@ body{
     left: 15%;
     top: 35%;
     display: inline;
+    background-color: #f1f4f1; 
  
 }
 #nodeCorvallis:hover {
@@ -54,7 +108,7 @@ body{
     cursor: pointer;
 }
 #osulogo {
-    padding: 7px;
+    padding: 8px;
     width: 65%;
     height: 65%;
     object-fit: cover;
@@ -71,13 +125,14 @@ body{
     position: absolute;
     left: 16%;
     top: 48%;
+    background-color: #f1f4f1; 
 }
 #nodeEugene:hover {
     background-color: #D3D3D3; 
     cursor: pointer;
 } 
 #uologo {
-    padding: 7px;
+    padding: 8px;
     width: 70%;
     height: 70%;
     object-fit: cover;
@@ -95,6 +150,7 @@ body{
     position: absolute;
     left: 17%;
     top: 19%;
+    background-color: #f1f4f1; 
 }
 #nodePortland:hover {
     background-color: #D3D3D3; 
@@ -112,7 +168,7 @@ body{
 #chart0{
     position: absolute; 
     top: 20vh;
-    left: 50vw;
+    left: 53vw;
 }
 .myButton {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -154,9 +210,14 @@ body{
 
 #buttonGroup{
     position: absolute; 
-    width: 500px;
+    width: auto;
     top: 50vh;
-    left: 5vw;
+    left: 1vw;
+    background-color: #41ab5d;
+    padding: 5px;
+    -moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
 }
 #compare{
     position: absolute; 

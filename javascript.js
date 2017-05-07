@@ -7,13 +7,17 @@ var UofP;
 
 
 function showData(school) {
+        document.getElementById('startup').style.visibility = "hidden";
+        document.getElementById('choose0').style.visibility = "hidden";
+        document.getElementById('choose1').style.visibility = "hidden";
+        document.getElementById('choose2').style.visibility = "hidden";
         currentSchool = school;
         var svg = d3.selectAll("svg")
         svg.selectAll("rect").remove();
         svg.selectAll("g").remove();
         svg.selectAll("text").remove();
         buildBar(school);
-        
+        document.getElementById('currentschool').innerHTML = currentSchool +":";
         /*document.getElementById("chart0").style.visibility = "visible";
         document.getElementById("chart0").style.display = "block";
         document.getElementById("mapCell").style.transform = "translate(-280px, 0)";
@@ -154,25 +158,25 @@ function buildBar(school){
     .attr("x", (width/5) - 10)             
     .attr("y", height + (margin.bottom/2))
     .attr("text-anchor", "middle")
-    //.attr("transform", "rotate(-90)")
-    .style("font-size", "18px")
+    .style("font-size", "16px")
     .style("font-weight", "bold")
+    .attr("font-family", "Verdana, Geneva, sans-serif")
     .text("WEAPONS");  
     g.append("text")
     .attr("x", (width/5)*3 - 35)             
     .attr("y", height + (margin.bottom/2))
     .attr("text-anchor", "middle")
-    //.attr("transform", "rotate(-90)")
-    .style("font-size", "18px")
+    .style("font-size", "16px")
     .style("font-weight", "bold")
+    .attr("font-family", "Verdana, Geneva, sans-serif") 
     .text("DRUGS");  
     g.append("text")
     .attr("x", width - 70)             
     .attr("y", height + (margin.bottom/2))
     .attr("text-anchor", "middle")
-    //.attr("transform", "rotate(-90)")
-    .style("font-size", "18px")
+    .style("font-size", "16px")
     .style("font-weight", "bold")
+    .attr("font-family", "Verdana, Geneva, sans-serif")
     .text("LIQUOR");  
     
     g.append("g")
@@ -188,7 +192,8 @@ function buildBar(school){
     .attr("y", -35)
     .attr("text-anchor", "middle")
     .attr("transform", "rotate(-90)")
-    .style("font-size", "20px")
+    .attr("font-family", "Verdana, Geneva, sans-serif")
+    .style("font-size", "16px")
     .style("font-weight", "bold")
     .text("Number of Crimes");      
      
@@ -198,7 +203,8 @@ function buildBar(school){
     .attr("x", ((width + margin.left + margin.right) / 2) + 20)             
     .attr("y", 0 + (margin.top/2) + 10)
     .attr("text-anchor", "middle")  
-    .style("font-size", "20px")
+    .style("font-size", "16px")
+    .style("font-weight", "bold")
     .attr("font-family", "Verdana, Geneva, sans-serif")
     .text("Crimes on " + school + " Campus");
         
@@ -354,7 +360,8 @@ function weapons(){
     .attr("y", -35)
     .attr("text-anchor", "middle")
     .attr("transform", "rotate(-90)")
-    .style("font-size", "20px")
+    .attr("font-family", "Verdana, Geneva, sans-serif")
+    .style("font-size", "16px")
     .style("font-weight", "bold")
     .text("Number of Crimes");  
         
@@ -362,7 +369,8 @@ function weapons(){
     .attr("x", ((width + margin.left + margin.right) / 2) + 20)             
     .attr("y", 0 + (margin.top/2) + 10)
     .attr("text-anchor", "middle")  
-    .style("font-size", "16px")
+    .style("font-size", "14px")
+    .style("font-weight", "bold")
     .attr("font-family", "Verdana, Geneva, sans-serif")
     .text("Weapon Only Crimes on " + school + " Campus By Year");
 
@@ -516,7 +524,8 @@ function drugs(){
     .attr("y", -35)
     .attr("text-anchor", "middle")
     .attr("transform", "rotate(-90)")
-    .style("font-size", "20px")
+    .attr("font-family", "Verdana, Geneva, sans-serif")
+    .style("font-size", "16px")
     .style("font-weight", "bold")
     .text("Number of Crimes");  
         
@@ -524,7 +533,8 @@ function drugs(){
     .attr("x", ((width + margin.left + margin.right) / 2) + 20)             
     .attr("y", 0 + (margin.top/2) + 10)
     .attr("text-anchor", "middle")  
-    .style("font-size", "16px")
+    .style("font-size", "14px")
+    .style("font-weight", "bold")
     .attr("font-family", "Verdana, Geneva, sans-serif")
     .text("Drug Only Crimes on " + school + " Campus By Year");
 
@@ -678,7 +688,8 @@ function liquor(){
     .attr("y", -35)
     .attr("text-anchor", "middle")
     .attr("transform", "rotate(-90)")
-    .style("font-size", "20px")
+    .attr("font-family", "Verdana, Geneva, sans-serif")
+    .style("font-size", "16px")
     .style("font-weight", "bold")
     .text("Number of Crimes");  
         
@@ -686,7 +697,8 @@ function liquor(){
     .attr("x", ((width + margin.left + margin.right) / 2) + 20)             
     .attr("y", 0 + (margin.top/2) + 10)
     .attr("text-anchor", "middle")  
-    .style("font-size", "16px")
+    .style("font-size", "14px")
+    .style("font-weight", "bold")
     .attr("font-family", "Verdana, Geneva, sans-serif")
     .text("Liquor Only Crimes on " + school + " Campus By Year");
 
@@ -711,7 +723,7 @@ function liquor(){
 }//end liquor
 
 function compareAll(){
-    currentSchool = "none";
+    
     var type = document.getElementById("type").value;
     console.log(type);
     //Create SVG element
@@ -859,7 +871,7 @@ function compareAll(){
     .style("font-weight", "bold")
     .text("Number of Crimes");  
     svg.append("text")
-    .attr("x", ((width + margin.left + margin.right) / 2))             
+    .attr("x", ((width + margin.left + margin.right) / 2) + 20)             
     .attr("y", 0 + (margin.top/2) + 10)
     .attr("font-family", "Verdana, Geneva, sans-serif")
     .attr("text-anchor", "middle")  

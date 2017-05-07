@@ -15,8 +15,11 @@
     <script src="javascript.js"></script>
     
     
-    <div class="gradient-text">    Crimes on Oregon College Campuses
-</div>
+    <div id="header" class="gradient-text">    
+        
+        Crimes on Oregon College Campuses
+    
+    </div>
 
     <table id="table">
         <tr style="height: 90%;">
@@ -35,8 +38,12 @@
                     </div> 
                 </div>  
                 <div id="buttonGroup" style="visibility: hidden;" >
+                    <h2 >Add a Filter</h2>
                     <table id="buttontable">
-                        <tr>
+                        <tr style="border-top: solid 1px white">
+                            <td>
+                                <label id="currentschool" class="label">Current School:</label>
+                            </td>
                             <td>
                                 <button type="button" class="myButton" style="width: 100px;" onclick="weapons()">Weapons</button>
                             </td>
@@ -49,6 +56,9 @@
                         </tr>
                         <tr>
                             <td>
+                                <label class="label">All Schools:</label>
+                            </td>
+                            <td>
                                 <button type="button" class="myButton" onclick="compareAll()">Compare</button>
                             </td>
                             <td>
@@ -57,10 +67,6 @@
                                     <option value="drug">Drugs</option>
                                     <option value="liquor">Liquor</option>
                                 </select>
-                                <script>
-                                    $( "select" )
-                                      .change(compareAll());
-                                </script>
                             </td>
                         </tr>
                     </table>
@@ -69,6 +75,10 @@
                 
             </td>
             <td id="graphCell">
+                <label id="startup">Choose a School</label>
+                <label id="choose0" class="choose">Choose</label>
+                <label id="choose1" class="choose">Choose</label>
+                <label id="choose2" class="choose">Choose</label>
                 <div>
                     <svg id="chart0" width="450" height="450"></svg>    
                 </div>
