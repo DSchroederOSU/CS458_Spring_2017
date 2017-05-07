@@ -27,13 +27,9 @@ body{
 #mapCell{
     position: absolute;
     width: 50%;
-    left: 30vw;
+    left: 10vw;
 } 
-#graphCell{
-    display: table-cell;
-    width: 50%;
-    position: relative;
-} 
+
 
 #map_photo{
     height: 45vh;
@@ -41,8 +37,8 @@ body{
 }
 
 #nodeCorvallis {
-    width: 2.5vw;
-    height: 2.5vw;
+    width: 3.5vw;
+    height: 3.5vw;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     border-radius: 25px;
@@ -58,16 +54,16 @@ body{
     cursor: pointer;
 }
 #osulogo {
-    padding: 5px;
-    width: 70%;
-    height: 70%;
+    padding: 7px;
+    width: 65%;
+    height: 65%;
     object-fit: cover;
     overflow: hidden;
     z-index: -1;
 }
 #nodeEugene {
-    width: 2.5vw;
-    height: 2.5vw;
+    width: 3.5vw;
+    height: 3.5vw;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     border-radius: 25px;
@@ -81,7 +77,7 @@ body{
     cursor: pointer;
 } 
 #uologo {
-    padding: 5px;
+    padding: 7px;
     width: 70%;
     height: 70%;
     object-fit: cover;
@@ -90,15 +86,15 @@ body{
 }
 
 #nodePortland {
-    width: 2.5vw;
-    height: 2.5vw;
+    width: 3.5vw;
+    height: 3.5vw;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     border-radius: 25px;
     background-color: white; 
     position: absolute;
     left: 17%;
-    top: 18%;
+    top: 19%;
 }
 #nodePortland:hover {
     background-color: #D3D3D3; 
@@ -115,26 +111,70 @@ body{
 
 #chart0{
     position: absolute; 
-    top: 15vh;
-    left: 100vw;
-}
-#chart1{
-    position: absolute; 
-    display: flex;
-    top: -20vh;
-    left: 0vw;
-}
-#chart2{
-    position: absolute; 
-    display: flex;
-    top: -20vh;
+    top: 20vh;
     left: 50vw;
 }
-#chart3{
-    position: absolute; 
-    display: flex;
-    top: -20vh;
-    left: 50vw;
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+	background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+	background-color:#ffffff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+    width: auto;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+	background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+	background-color:#f6f6f6;
 }
 
+#buttonGroup{
+    position: absolute; 
+    width: 500px;
+    top: 50vh;
+    left: 5vw;
+}
+#compare{
+    position: absolute; 
+    width: 500px;
+}
 
+.gradient-text {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    padding: 20px;
+    overflow: hidden;
+    border: none;
+    font: normal 40px/1 Verdana, Geneva, sans-serif;
+    color: rgba(0,0,0,1);
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    margin-bottom: 30px;
+  
+}

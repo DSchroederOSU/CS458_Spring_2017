@@ -1,13 +1,12 @@
 <html lang="en" data-framework="intercoolerjs">
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
-  <title>Oregon College Crime Data Visualization</title>
-  <meta name="description" content="CS458 Assignment 1">
-  <meta name="author" content="Daniel Schroeder">
+    <title>Oregon College Crime Data Visualization</title>
+    <meta name="description" content="CS458 Assignment 1">
+    <meta name="author" content="Daniel Schroeder">
 
-  <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="style.css">
 </head>
     
 <body> 
@@ -16,13 +15,11 @@
     <script src="javascript.js"></script>
     
     
-    
-    <div id="header">
-      CS 458 Assignment 1 Visualization
-    </div>
-    
+    <div class="gradient-text">    Crimes on Oregon College Campuses
+</div>
+
     <table id="table">
-        <tr>
+        <tr style="height: 90%;">
             <td id="mapCell">
                 <div id="state_container">
                     <img id="map_photo" SRC="Oregon_Map.png" alt="some text" width=32 height=32/>
@@ -37,16 +34,49 @@
                         <img id="psulogo" src="psu.png" alt="blah" width=auto; height="auto"/>
                     </div> 
                 </div>  
+                <div id="buttonGroup" style="visibility: hidden;" >
+                    <table id="buttontable">
+                        <tr>
+                            <td>
+                                <button type="button" class="myButton" style="width: 100px;" onclick="weapons()">Weapons</button>
+                            </td>
+                            <td>
+                                <button type="button" class="myButton" style="width: 100px;" onclick="drugs()">Drugs</button>
+                            </td>
+                            <td>
+                                <button type="button" class="myButton" style="width: 100px;" onclick="liquor()">Liquor</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="myButton" onclick="compareAll()">Compare</button>
+                            </td>
+                            <td>
+                                <select id="type">
+                                    <option value="weapon">Weapon</option>
+                                    <option value="drug">Drugs</option>
+                                    <option value="liquor">Liquor</option>
+                                </select>
+                                <script>
+                                    $( "select" )
+                                      .change(compareAll());
+                                </script>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                    
                 
             </td>
             <td id="graphCell">
-                <div id='dashboard' style="position: absolute; left: 1200px; top: 160px;">
+                <div>
+                    <svg id="chart0" width="450" height="450"></svg>    
                 </div>
+                 
             </td>
-        </tr>
+            
     </table>
     
-    <svg id="chart0" width="500" height="500"></svg>
     
    <script>
        
