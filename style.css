@@ -24,7 +24,7 @@ body{
     color: white;
     font-family:verdana, sans-serif;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 1vw;
     -moz-border-radius:6px;
 	-webkit-border-radius:6px;
 	border-radius:6px;
@@ -33,16 +33,16 @@ body{
  
 }
 #choose0{
-    left: 21.5vw;
-    top: 41vh; 
+    left: 12.5vw;
+    top: 10.5vh; 
 }
 #choose1{
-    left: 22vw;
-    top: 47vh; 
+    left: 11.7vw;
+    top: 18vh; 
 }
 #choose2{
-    left: 22.4vw;
-    top: 33vh; 
+    left: 12vw;
+    top: 24vh; 
 }
 
 h2{
