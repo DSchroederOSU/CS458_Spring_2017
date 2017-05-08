@@ -55,6 +55,7 @@
 \usepackage[section]{placeins}
 \usepackage{float}
 \usepackage{hyperref}
+\usepackage[all]{hypcap}
 \usepackage{enumitem}
 \usepackage[hyphenbreaks]{breakurl}
 \hypersetup{
@@ -208,7 +209,7 @@ It then creates a dataset by selecting only data from each array pertaining to t
 \end{figure}
 
 \subsection{One School, By Crime Type}
-Our visualization adopts filtering techniques made aware to us by one of our researched sources \cite{ kogan_2013 }, that allows the user to select a specific type of crime and see the number of reports of that crime by year.  This filter enables an explicit representation of crimes over time to depict whether a college campus has grown safer, or more dangerous, across the three years our dataset provided. There are HTML buttons pertaining to each type of crime (weapon, drug, and liquor), and upon clicking a button, one of three JavaScript functions pertaining to a crime type removes all d3 axes and rectangle objects from the current svg and updates the dataset by selecting the .cvs columns that correlate to the specified crime type. The function looks at what college is currently being displayed and builds a new bar chart with the specified crime type values for each year. As shown in \nameref{fig:OneSchoolOneType}, this bar graph shows an increase in drug crimes on Oregon State University's campus from 2013 to 2015 and provides a very clear, distinguishable comparison between each year.
+Our visualization adopts filtering techniques made aware to us by one of our researched sources \cite{ kogan_2013 }, that allows the user to select a specific type of crime and see the number of reports of that crime by year.  This filter enables an explicit representation of crimes over time to depict whether a college campus has grown safer, or more dangerous, across the three years our dataset provided. There are HTML buttons pertaining to each type of crime (weapon, drug, and liquor), and upon clicking a button, one of three JavaScript functions pertaining to a crime type removes all d3 axes and rectangle objects from the current svg and updates the dataset by selecting the .cvs columns that correlate to the specified crime type. The function looks at what college is currently being displayed and builds a new bar chart with the specified crime type values for each year. As shown in \autoref{fig:OneSchoolOneType}, this bar graph shows an increase in drug crimes on Oregon State University's campus from 2013 to 2015 and provides a very clear, distinguishable comparison between each year.
 \begin{figure}[H]
 \label{fig:OneSchoolOneType} 
 \includegraphics[width=8cm, height=7cm]{OneSchoolOneType}
